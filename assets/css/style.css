@@ -4710,7 +4710,7 @@ table tbody .border-bottom-info td {
 .pcoded[theme-layout="vertical"] .pcoded-header[pcoded-header-position="fixed"] {
   position: fixed;
   z-index: 1028;
-  background-color: #434343; 
+  background-color: #000000; 
   color: #fff; }
 .pcoded[theme-layout="vertical"] .pcoded-header[pcoded-header-position="absolute"] {
   position: absolute; }
@@ -6059,7 +6059,7 @@ body[themebg-pattern="pattern9"] {
   border-bottom: 1px solid #444c67;
   border-top: 1px solid #444c67; }
 .pcoded .pcoded-header .navbar-logo[logo-theme="theme1"] {
-  background-color: #434343; }
+  background-color: #000000; }
 .pcoded .pcoded-header .navbar-logo[logo-theme="theme2"] {
   background-color: #ef5350; }
 .pcoded .pcoded-header .navbar-logo[logo-theme="theme3"] {
@@ -14322,15 +14322,37 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
 .bg_gray{
   background: #d5d5d5!important;
 }
-.hum{
-   background: #4fd54f;
+.bat h5{
+   color: #4fd54f;
    text-align: center;
-    padding: 13px 0px;
-    color: #fff;
+    padding: 4px 0px;
+    font-family: digital-7;
+    font-size: 25px;
 }
-.bat{
-   background: #2196f3;
+.bat i{
+   color: #4fd54f;
+}
+.hum h5{
+   color: #2196f3;
    text-align: center;
-    padding: 13px 0px;
-    color: #fff;
+    padding: 4px 0px;
+    font-family: digital-7;
+    font-size: 25px;
+}
+.hum i{
+   color: #2196f3;
+}
+.tem h5{
+   color: #FC6180;
+   text-align: center;
+    padding: 4px 0px;
+    font-family: digital-7;
+    font-size: 25px;
+}
+.tem i{
+   color: #FC6180;
+}
+@font-face {
+  font-family: 'Digital-7';
+  src:  url('digital-7/digital-7.ttf');
 }

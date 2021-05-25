@@ -20,12 +20,13 @@
       <meta name="theme-color" content="#0B5E97">
       <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="194x194">
       <!-- Google font-->
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:wght@100;200;400;500;900&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900;1,500;1,600&display=swap" rel="stylesheet">
       <!-- Required Fremwork -->
       <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/css/bootstrap.min.css">
+      <link href="assets/css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
       <!-- themify-icons line icon -->
-      <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css">
-      <!-- ico font -->
+      <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css">      <!-- ico font -->
       <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
       <!-- Style.css -->
       <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -83,9 +84,9 @@
                         <a class="mobile-menu" id="mobile-collapse" href="#!">
                             <i class="ti-menu"></i>
                         </a>
-                        <a class="mobile-search morphsearch-search" href="#">
+                        <!-- <a class="mobile-search morphsearch-search" href="#">
                             <i class="ti-search"></i>
-                        </a>
+                        </a> -->
                         <a href="index.html">
                             <img class="img-fluid" src="assets/images/logo1.png" alt="Theme-Logo" />
                         </a>
@@ -105,6 +106,9 @@
                                     <i class="ti-fullscreen"></i>
                                 </a>
                             </li>
+                            <li>
+                                <a href="">Riyadh Warehouse 3</a>
+                            </li>
                         </ul>
                         <ul class="nav-right">
                              <li class="user-profile header-notification">
@@ -114,7 +118,7 @@
                                 </a>
                                 <ul class="show-notification profile-notification">
                                     <li>
-                                        <a href="">
+                                        <a href="sign_in.html">
                                             <i class="ti-layout-sidebar-left"></i> Logout
                                         </a>
                                     </li>
@@ -147,7 +151,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="">
+                                    <a href="alerts.html">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Alerts</span>
                                         <span class="pcoded-mcaret"></span>
@@ -173,13 +177,13 @@
                                         <div class="col-6 col-sm-6 col-md-4 col-lg-3">
                                             <select class="form-control">
                                                 <option value="">Warehouse</option>
-                                                <option value="">Riyadh</option>
-                                                <option value="">Dammam</option>
-                                                <option value="">Qatar</option>
+                                                <option value="">Warehouse 1</option>
+                                                <option value="">Warehouse 2</option>
+                                                <option value="">Warehouse 3</option>
                                             </select>
                                         </div>
                                         <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                                            <button class="btn btn-success">Submit</button>
+                                            <button class="btn btn-primary">Submit</button>
                                         </div>
                                     </div>
                                     <div class="page-body pt-4">
@@ -189,63 +193,24 @@
                                                     <div class="card-header text-center bg_gray p-3">
                                                         <strong>CHAMBER 1</strong>
                                                     </div>
-                                                    <div class="card-body">
+                                                    <div class="card-body pb-0">
                                                         <div class="row">
-                                                            <div class="col-md-8">
-                                                                <canvas data-type="radial-gauge"
-                                                                    data-width="200"
-                                                                    data-height="200"
-                                                                    data-units="°C"
-                                                                    data-title="Temperature"
-                                                                    data-min-value="-50"
-                                                                    data-max-value="50"
-                                                                    data-major-ticks="[-50,-40,-30,-20,-10,0,10,20,30,40,50]"
-                                                                    data-minor-ticks="2"
-                                                                    data-stroke-ticks="true"
-                                                                    data-highlights='[ {"from": -50, "to": -20, "color": "rgb(31 114 214)"}, {"from": -20, "to": -10, "color": "rgb(161 201 249)"}, {"from": -10, "to": 30, "color": "rgb(99 196 3)"},
-                                                                        {"from": 30, "to": 40, "color": "rgb(245 232 119)"}, {"from": 40, "to": 50, "color": "rgb(247 31 15)"} ]'
-                                                                    data-ticks-angle="225"
-                                                                    data-start-angle="67.5"
-                                                                    data-color-major-ticks="#ddd"
-                                                                    data-color-minor-ticks="#000"
-                                                                    data-color-title="#000"
-                                                                    data-color-units="#000"
-                                                                    data-color-numbers="#000"
-                                                                    data-color-plate="#fff"
-                                                                    data-border-shadow-width="0"
-                                                                    data-borders="true"
-                                                                    data-needle-type="arrow"
-                                                                    data-needle-width="2"
-                                                                    data-needle-circle-size="7"
-                                                                    data-needle-circle-outer="true"
-                                                                    data-needle-circle-inner="false"
-                                                                    data-animation-duration="1500"
-                                                                    data-animation-rule="linear"
-                                                                    data-color-border-outer="#fff"
-                                                                    data-color-border-outer-end="#fff"
-                                                                    data-color-border-middle="#fff"
-                                                                    data-color-border-middle-end="#fff"
-                                                                    data-color-border-inner="#fff"
-                                                                    data-color-border-inner-end="#fff"
-                                                                    data-color-needle-shadow-down="#333"
-                                                                    data-color-needle-circle-outer="#333"
-                                                                    data-color-needle-circle-outer-end="#111"
-                                                                    data-color-needle-circle-inner="#111"
-                                                                    data-color-needle-circle-inner-end="#222"
-                                                                    data-value-box-border-radius="0"
-                                                                    data-color-value-box-rect="#222"
-                                                                    data-color-value-box-rect-end="#333"
-                                                                ></canvas>
+                                                            <div class="col-md-9 px-1 justify-content-center d-flex">
+                                                                <canvas id="canvas-id"></canvas>
                                                             </div>
-                                                            <div class="col-md-4 text-center">
+                                                            <div class="col-md-3 text-center px-1 pt-3">
+                                                                <div class="tem">
+                                                                    <p class="mb-0"><i class="fas fa-thermometer-half"></i> <strong>TEMP</strong></p>
+                                                                    <h5><strong>20°C</strong></h5>
+                                                                </div>
                                                                 <div class="hum">
-                                                                    <h5><strong>40c</strong></h5>
+                                                                    <p class="mb-0"><i class="fas fa-tint"></i> <strong>HUMID</strong></p>
+                                                                    <h5><strong>40%</strong></h5>
                                                                 </div>
-                                                                <p><strong>HUMIDITY</strong></p>
                                                                 <div class="bat">
-                                                                  <h5><strong>30%</strong></h5>
+                                                                   <p class="mb-0"><i class="fas fa-car-battery"></i> <strong>Battery</strong></p>
+                                                                   <h5><strong>30%</strong></h5>
                                                                 </div>
-                                                                <p class="mb-0"><strong>BATTERY</strong></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -257,63 +222,24 @@
                                                     <div class="card-header text-center bg_gray p-3">
                                                         <strong>CHAMBER 2</strong>
                                                     </div>
-                                                    <div class="card-body">
+                                                    <div class="card-body pb-0">
                                                         <div class="row">
-                                                            <div class="col-md-8">
-                                                                <canvas data-type="radial-gauge"
-                                                                    data-width="200"
-                                                                    data-height="200"
-                                                                    data-units="°C"
-                                                                    data-title="Temperature"
-                                                                    data-min-value="-50"
-                                                                    data-max-value="50"
-                                                                    data-major-ticks="[-50,-40,-30,-20,-10,0,10,20,30,40,50]"
-                                                                    data-minor-ticks="2"
-                                                                    data-stroke-ticks="true"
-                                                                    data-highlights='[ {"from": -50, "to": -20, "color": "rgb(31 114 214)"}, {"from": -20, "to": -10, "color": "rgb(161 201 249)"}, {"from": -10, "to": 30, "color": "rgb(99 196 3)"},
-                                                                        {"from": 30, "to": 40, "color": "rgb(245 232 119)"}, {"from": 40, "to": 50, "color": "rgb(247 31 15)"} ]'
-                                                                    data-ticks-angle="225"
-                                                                    data-start-angle="67.5"
-                                                                    data-color-major-ticks="#ddd"
-                                                                    data-color-minor-ticks="#000"
-                                                                    data-color-title="#000"
-                                                                    data-color-units="#000"
-                                                                    data-color-numbers="#000"
-                                                                    data-color-plate="#fff"
-                                                                    data-border-shadow-width="0"
-                                                                    data-borders="true"
-                                                                    data-needle-type="arrow"
-                                                                    data-needle-width="2"
-                                                                    data-needle-circle-size="7"
-                                                                    data-needle-circle-outer="true"
-                                                                    data-needle-circle-inner="false"
-                                                                    data-animation-duration="1500"
-                                                                    data-animation-rule="linear"
-                                                                    data-color-border-outer="#fff"
-                                                                    data-color-border-outer-end="#fff"
-                                                                    data-color-border-middle="#fff"
-                                                                    data-color-border-middle-end="#fff"
-                                                                    data-color-border-inner="#fff"
-                                                                    data-color-border-inner-end="#fff"
-                                                                    data-color-needle-shadow-down="#333"
-                                                                    data-color-needle-circle-outer="#333"
-                                                                    data-color-needle-circle-outer-end="#111"
-                                                                    data-color-needle-circle-inner="#111"
-                                                                    data-color-needle-circle-inner-end="#222"
-                                                                    data-value-box-border-radius="0"
-                                                                    data-color-value-box-rect="#222"
-                                                                    data-color-value-box-rect-end="#333"
-                                                                ></canvas>
+                                                            <div class="col-md-9 px-1 justify-content-center d-flex">
+                                                                <canvas id="canvas-id2"></canvas>
                                                             </div>
-                                                            <div class="col-md-4 text-center">
+                                                            <div class="col-md-3 text-center px-1 pt-3">
+                                                                <div class="tem">
+                                                                    <p class="mb-0"><i class="fas fa-thermometer-half"></i> <strong>TEMP</strong></p>
+                                                                    <h5><strong>30°C</strong></h5>
+                                                                </div>
                                                                 <div class="hum">
-                                                                    <h5><strong>40c</strong></h5>
+                                                                    <p class="mb-0"><i class="fas fa-tint"></i> <strong>HUMID</strong></p>
+                                                                    <h5><strong>40%</strong></h5>
                                                                 </div>
-                                                                <p><strong>HUMIDITY</strong></p>
                                                                 <div class="bat">
-                                                                  <h5><strong>30%</strong></h5>
+                                                                   <p class="mb-0"><i class="fas fa-car-battery"></i> <strong>Battery</strong></p>
+                                                                   <h5><strong>30%</strong></h5>
                                                                 </div>
-                                                                <p class="mb-0"><strong>BATTERY</strong></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -325,63 +251,24 @@
                                                     <div class="card-header text-center bg_gray p-3">
                                                         <strong>CHAMBER 3</strong>
                                                     </div>
-                                                    <div class="card-body">
+                                                    <div class="card-body pb-0">
                                                         <div class="row">
-                                                            <div class="col-md-8">
-                                                                <canvas data-type="radial-gauge"
-                                                                    data-width="200"
-                                                                    data-height="200"
-                                                                    data-units="°C"
-                                                                    data-title="Temperature"
-                                                                    data-min-value="-50"
-                                                                    data-max-value="50"
-                                                                    data-major-ticks="[-50,-40,-30,-20,-10,0,10,20,30,40,50]"
-                                                                    data-minor-ticks="2"
-                                                                    data-stroke-ticks="true"
-                                                                    data-highlights='[ {"from": -50, "to": -20, "color": "rgb(31 114 214)"}, {"from": -20, "to": -10, "color": "rgb(161 201 249)"}, {"from": -10, "to": 30, "color": "rgb(99 196 3)"},
-                                                                        {"from": 30, "to": 40, "color": "rgb(245 232 119)"}, {"from": 40, "to": 50, "color": "rgb(247 31 15)"} ]'
-                                                                    data-ticks-angle="225"
-                                                                    data-start-angle="67.5"
-                                                                    data-color-major-ticks="#ddd"
-                                                                    data-color-minor-ticks="#000"
-                                                                    data-color-title="#000"
-                                                                    data-color-units="#000"
-                                                                    data-color-numbers="#000"
-                                                                    data-color-plate="#fff"
-                                                                    data-border-shadow-width="0"
-                                                                    data-borders="true"
-                                                                    data-needle-type="arrow"
-                                                                    data-needle-width="2"
-                                                                    data-needle-circle-size="7"
-                                                                    data-needle-circle-outer="true"
-                                                                    data-needle-circle-inner="false"
-                                                                    data-animation-duration="1500"
-                                                                    data-animation-rule="linear"
-                                                                    data-color-border-outer="#fff"
-                                                                    data-color-border-outer-end="#fff"
-                                                                    data-color-border-middle="#fff"
-                                                                    data-color-border-middle-end="#fff"
-                                                                    data-color-border-inner="#fff"
-                                                                    data-color-border-inner-end="#fff"
-                                                                    data-color-needle-shadow-down="#333"
-                                                                    data-color-needle-circle-outer="#333"
-                                                                    data-color-needle-circle-outer-end="#111"
-                                                                    data-color-needle-circle-inner="#111"
-                                                                    data-color-needle-circle-inner-end="#222"
-                                                                    data-value-box-border-radius="0"
-                                                                    data-color-value-box-rect="#222"
-                                                                    data-color-value-box-rect-end="#333"
-                                                                ></canvas>
+                                                            <div class="col-md-9 px-1 justify-content-center d-flex">
+                                                                <canvas id="canvas-id3"></canvas>
                                                             </div>
-                                                            <div class="col-md-4 text-center">
+                                                            <div class="col-md-3 text-center px-1 pt-3">
+                                                                <div class="tem">
+                                                                    <p class="mb-0"><i class="fas fa-thermometer-half"></i> <strong>TEMP</strong></p>
+                                                                    <h5><strong>-20°C</strong></h5>
+                                                                </div>
                                                                 <div class="hum">
-                                                                    <h5><strong>40c</strong></h5>
+                                                                    <p class="mb-0"><i class="fas fa-tint"></i> <strong>HUMID</strong></p>
+                                                                    <h5><strong>40%</strong></h5>
                                                                 </div>
-                                                                <p><strong>HUMIDITY</strong></p>
                                                                 <div class="bat">
-                                                                  <h5><strong>30%</strong></h5>
+                                                                   <p class="mb-0"><i class="fas fa-car-battery"></i> <strong>Battery</strong></p>
+                                                                   <h5><strong>30%</strong></h5>
                                                                 </div>
-                                                                <p class="mb-0"><strong>BATTERY</strong></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -443,16 +330,14 @@ var nav = $('.fixed-button');
  });
 </script>
 <script type="text/javascript">
-  gauge.value = 56;
-    gauge.update();
-
     //temperature
     var gauge = new RadialGauge({
     renderTo: 'canvas-id',
-    width: 200,
-    height: 200,
+    width: 230,
+    height: 230,
     units: "°C",
     title: "Temperature",
+    value: 20,
     minValue: -50,
     maxValue: 50,
     majorTicks: [
@@ -472,24 +357,39 @@ var nav = $('.fixed-button');
     strokeTicks: true,
     highlights: [
         {
-            "from": -50,
-            "to": 0,
-            "color": "rgb(31 114 214);"
+            "from": -50, 
+            "to": -20, 
+            "color": "rgb(31 114 214)"
+        }, 
+        {
+            "from": -20, 
+            "to": -10, 
+            "color": "rgb(161 201 249)"
+        }, 
+        {
+            "from": -10, 
+            "to": 30, 
+            "color": "rgb(99 196 3)"
         },
         {
-            "from": 0,
-            "to": 50,
-            "color": "rgb(99 196 3)"
+            "from": 30, 
+            "to": 40, 
+            "color": "rgb(245 232 119)"
+        }, 
+        {
+            "from": 40, 
+            "to": 50, 
+            "color": "rgb(247 31 15)"
         }
     ],
     ticksAngle: 225,
     startAngle: 67.5,
     colorMajorTicks: "#ddd",
-    colorMinorTicks: "#ddd",
-    colorTitle: "#eee",
-    colorUnits: "#ccc",
-    colorNumbers: "#eee",
-    colorPlate: "#222",
+    colorMinorTicks: "#000",
+    colorTitle: "#000",
+    colorUnits: "#000",
+    colorNumbers: "#000",
+    colorPlate: "#fff",
     borderShadowWidth: 0,
     borders: true,
     needleType: "arrow",
@@ -499,12 +399,12 @@ var nav = $('.fixed-button');
     needleCircleInner: false,
     animationDuration: 1500,
     animationRule: "linear",
-    colorBorderOuter: "#333",
-    colorBorderOuterEnd: "#111",
-    colorBorderMiddle: "#222",
-    colorBorderMiddleEnd: "#111",
-    colorBorderInner: "#111",
-    colorBorderInnerEnd: "#333",
+    colorBorderOuter: "#fff",
+    colorBorderOuterEnd: "#fff",
+    colorBorderMiddle: "#fff",
+    colorBorderMiddleEnd: "#fff",
+    colorBorderInner: "#fff",
+    colorBorderInnerEnd: "#fff",
     colorNeedleShadowDown: "#333",
     colorNeedleCircleOuter: "#333",
     colorNeedleCircleOuterEnd: "#111",
@@ -514,6 +414,187 @@ var nav = $('.fixed-button');
     colorValueBoxRect: "#222",
     colorValueBoxRectEnd: "#333"
 }).draw();
+    document.gauges.forEach(function (gauge) {
+    console.log(gauge.type);
+});
+</script>
+<script type="text/javascript">
+    //temperature
+    var gauge = new RadialGauge({
+    renderTo: 'canvas-id2',
+    width: 230,
+    height: 230,
+    units: "°C",
+    title: "Temperature",
+    value: 30,
+    minValue: -50,
+    maxValue: 50,
+    majorTicks: [
+        -50,
+        -40,
+        -30,
+        -20,
+        -10,
+        0,
+        10,
+        20,
+        30,
+        40,
+        50
+    ],
+    minorTicks: 2,
+    strokeTicks: true,
+    highlights: [
+        {
+            "from": -50, 
+            "to": -20, 
+            "color": "rgb(31 114 214)"
+        }, 
+        {
+            "from": -20, 
+            "to": -10, 
+            "color": "rgb(161 201 249)"
+        }, 
+        {
+            "from": -10, 
+            "to": 30, 
+            "color": "rgb(99 196 3)"
+        },
+        {
+            "from": 30, 
+            "to": 40, 
+            "color": "rgb(245 232 119)"
+        }, 
+        {
+            "from": 40, 
+            "to": 50, 
+            "color": "rgb(247 31 15)"
+        }
+    ],
+    ticksAngle: 225,
+    startAngle: 67.5,
+    colorMajorTicks: "#ddd",
+    colorMinorTicks: "#000",
+    colorTitle: "#000",
+    colorUnits: "#000",
+    colorNumbers: "#000",
+    colorPlate: "#fff",
+    borderShadowWidth: 0,
+    borders: true,
+    needleType: "arrow",
+    needleWidth: 2,
+    needleCircleSize: 7,
+    needleCircleOuter: true,
+    needleCircleInner: false,
+    animationDuration: 1500,
+    animationRule: "linear",
+    colorBorderOuter: "#fff",
+    colorBorderOuterEnd: "#fff",
+    colorBorderMiddle: "#fff",
+    colorBorderMiddleEnd: "#fff",
+    colorBorderInner: "#fff",
+    colorBorderInnerEnd: "#fff",
+    colorNeedleShadowDown: "#333",
+    colorNeedleCircleOuter: "#333",
+    colorNeedleCircleOuterEnd: "#111",
+    colorNeedleCircleInner: "#111",
+    colorNeedleCircleInnerEnd: "#222",
+    valueBoxBorderRadius: 0,
+    colorValueBoxRect: "#222",
+    colorValueBoxRectEnd: "#333"
+}).draw();
+    document.gauges.forEach(function (gauge) {
+    console.log(gauge.type);
+});
+</script>
+<script type="text/javascript">
+    //temperature
+    var gauge = new RadialGauge({
+    renderTo: 'canvas-id3',
+    width: 230,
+    height: 230,
+    units: "°C",
+    title: "Temperature",
+    value: -20,
+    minValue: -50,
+    maxValue: 50,
+    majorTicks: [
+        -50,
+        -40,
+        -30,
+        -20,
+        -10,
+        0,
+        10,
+        20,
+        30,
+        40,
+        50
+    ],
+    minorTicks: 2,
+    strokeTicks: true,
+    highlights: [
+        {
+            "from": -50, 
+            "to": -20, 
+            "color": "rgb(31 114 214)"
+        }, 
+        {
+            "from": -20, 
+            "to": -10, 
+            "color": "rgb(161 201 249)"
+        }, 
+        {
+            "from": -10, 
+            "to": 30, 
+            "color": "rgb(99 196 3)"
+        },
+        {
+            "from": 30, 
+            "to": 40, 
+            "color": "rgb(245 232 119)"
+        }, 
+        {
+            "from": 40, 
+            "to": 50, 
+            "color": "rgb(247 31 15)"
+        }
+    ],
+    ticksAngle: 225,
+    startAngle: 67.5,
+    colorMajorTicks: "#ddd",
+    colorMinorTicks: "#000",
+    colorTitle: "#000",
+    colorUnits: "#000",
+    colorNumbers: "#000",
+    colorPlate: "#fff",
+    borderShadowWidth: 0,
+    borders: true,
+    needleType: "arrow",
+    needleWidth: 2,
+    needleCircleSize: 7,
+    needleCircleOuter: true,
+    needleCircleInner: false,
+    animationDuration: 1500,
+    animationRule: "linear",
+    colorBorderOuter: "#fff",
+    colorBorderOuterEnd: "#fff",
+    colorBorderMiddle: "#fff",
+    colorBorderMiddleEnd: "#fff",
+    colorBorderInner: "#fff",
+    colorBorderInnerEnd: "#fff",
+    colorNeedleShadowDown: "#333",
+    colorNeedleCircleOuter: "#333",
+    colorNeedleCircleOuterEnd: "#111",
+    colorNeedleCircleInner: "#111",
+    colorNeedleCircleInnerEnd: "#222",
+    valueBoxBorderRadius: 0,
+    colorValueBoxRect: "#222",
+    colorValueBoxRectEnd: "#333"
+}).draw();
+    document.gauges.forEach(function (gauge) {
+    console.log(gauge.type);
+});
 </script>
 </body>
 

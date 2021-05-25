@@ -201,11 +201,11 @@
                                                             <div class="col-md-3 text-center px-1 pt-3">
                                                                 <div class="tem">
                                                                     <p class="mb-0"><i class="fas fa-thermometer-half"></i> <strong>TEMP</strong></p>
-                                                                    <h5><strong>20°C</strong></h5>
+                                                                    <h5  id="temVal"><strong>20°C</strong></h5>
                                                                 </div>
                                                                 <div class="hum">
                                                                     <p class="mb-0"><i class="fas fa-tint"></i> <strong>HUMID</strong></p>
-                                                                    <h5><strong>40%</strong></h5>
+                                                                    <h5><strong>40% RH</strong></h5>
                                                                 </div>
                                                                 <div class="bat">
                                                                    <p class="mb-0"><i class="fas fa-car-battery"></i> <strong>Battery</strong></p>
@@ -234,7 +234,7 @@
                                                                 </div>
                                                                 <div class="hum">
                                                                     <p class="mb-0"><i class="fas fa-tint"></i> <strong>HUMID</strong></p>
-                                                                    <h5><strong>40%</strong></h5>
+                                                                    <h5><strong>40% RH</strong></h5>
                                                                 </div>
                                                                 <div class="bat">
                                                                    <p class="mb-0"><i class="fas fa-car-battery"></i> <strong>Battery</strong></p>
@@ -263,7 +263,7 @@
                                                                 </div>
                                                                 <div class="hum">
                                                                     <p class="mb-0"><i class="fas fa-tint"></i> <strong>HUMID</strong></p>
-                                                                    <h5><strong>40%</strong></h5>
+                                                                    <h5><strong>40% RH</strong></h5>
                                                                 </div>
                                                                 <div class="bat">
                                                                    <p class="mb-0"><i class="fas fa-car-battery"></i> <strong>Battery</strong></p>
@@ -331,7 +331,7 @@ var nav = $('.fixed-button');
 </script>
 <script type="text/javascript">
     //temperature
-    var gauge = new RadialGauge({
+    var gauge1 = new RadialGauge({
     renderTo: 'canvas-id',
     width: 230,
     height: 230,
@@ -411,16 +411,25 @@ var nav = $('.fixed-button');
     colorNeedleCircleInner: "#111",
     colorNeedleCircleInnerEnd: "#222",
     valueBoxBorderRadius: 0,
-    colorValueBoxRect: "#222",
-    colorValueBoxRectEnd: "#333"
+    colorValueBoxRect: "#fff",
+    colorValueBoxRectEnd: "#fff",
+    colorValueBoxBackground: "#fff",
+    colorValueBoxShadow: "#fff",
+    colorValueText: "#fff",
+    colorValueTextShadow: "#fff"
 }).draw();
-    document.gauges.forEach(function (gauge) {
-    console.log(gauge.type);
-});
+setInterval(function() {
+  // update the above chart...
+  var value = Math.round(Math.random() * 50);
+  gauge1.value = value;
+  
+  // Update the declarative chart...
+  document.getElementById("gauge-a").setAttribute("data-value", value);
+}, 1800);
 </script>
 <script type="text/javascript">
     //temperature
-    var gauge = new RadialGauge({
+    var gauge2 = new RadialGauge({
     renderTo: 'canvas-id2',
     width: 230,
     height: 230,
@@ -500,16 +509,25 @@ var nav = $('.fixed-button');
     colorNeedleCircleInner: "#111",
     colorNeedleCircleInnerEnd: "#222",
     valueBoxBorderRadius: 0,
-    colorValueBoxRect: "#222",
-    colorValueBoxRectEnd: "#333"
+    colorValueBoxRect: "#fff",
+    colorValueBoxRectEnd: "#fff",
+    colorValueBoxBackground: "#fff",
+    colorValueBoxShadow: "#fff",
+    colorValueText: "#fff",
+    colorValueTextShadow: "#fff"
 }).draw();
-    document.gauges.forEach(function (gauge) {
-    console.log(gauge.type);
-});
+setInterval(function() {
+  // update the above chart...
+  var value = Math.round(Math.random() * 50);
+  gauge2.value = value;
+  
+  // Update the declarative chart...
+  document.getElementById("gauge-a").setAttribute("data-value", value);
+}, 1800);
 </script>
 <script type="text/javascript">
     //temperature
-    var gauge = new RadialGauge({
+    var gauge3 = new RadialGauge({
     renderTo: 'canvas-id3',
     width: 230,
     height: 230,
@@ -589,12 +607,21 @@ var nav = $('.fixed-button');
     colorNeedleCircleInner: "#111",
     colorNeedleCircleInnerEnd: "#222",
     valueBoxBorderRadius: 0,
-    colorValueBoxRect: "#222",
-    colorValueBoxRectEnd: "#333"
+    colorValueBoxRect: "#fff",
+    colorValueBoxRectEnd: "#fff",
+    colorValueBoxBackground: "#fff",
+    colorValueBoxShadow: "#fff",
+    colorValueText: "#fff",
+    colorValueTextShadow: "#fff"
 }).draw();
-    document.gauges.forEach(function (gauge) {
-    console.log(gauge.type);
-});
+setInterval(function() {
+  // update the above chart...
+  var value = Math.round(Math.random() * 50);
+  gauge3.value = value;
+  
+  // Update the declarative chart...
+  document.getElementById("gauge-a").setAttribute("data-value", value);
+}, 1800);   
 </script>
 </body>
 

@@ -14319,6 +14319,7 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
     background-color: #444c67; }
 
 /*# sourceMappingURL=style.css.map */
+/*===========home page============*/
 .bg_gray{
   background: #d5d5d5!important;
 }
@@ -14355,4 +14356,45 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
 @font-face {
   font-family: 'Digital-7';
   src:  url('digital-7/digital-7.ttf');
+}
+
+/*===========high charts============*/
+.highcharts-figure, .highcharts-data-table table {
+  min-width: 310px; 
+  max-width: 800px;
+}
+
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #EBEBEB;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+.highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+}
+.highcharts-data-table th {
+  font-weight: 600;
+  padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+  padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+  background: #f1f7ff;
+}
+.highcharts-credits, .highcharts-button-symbol{
+  display: none!important;
+  cursor: progress!important;
+}
+.highcharts-button-symbol:hover{
+  background: white!important;
 }

@@ -201,11 +201,11 @@
                                                             <div class="col-md-3 text-center px-1 pt-3">
                                                                 <div class="tem">
                                                                     <p class="mb-0"><i class="fas fa-thermometer-half"></i> <strong>TEMP</strong></p>
-                                                                    <h5  id="temVal"><strong>20°C</strong></h5>
+                                                                    <h5><strong><span id="temVal"></span>°C</strong></h5>
                                                                 </div>
                                                                 <div class="hum">
                                                                     <p class="mb-0"><i class="fas fa-tint"></i> <strong>HUMID</strong></p>
-                                                                    <h5><strong>40% RH</strong></h5>
+                                                                    <h5><strong><span id="humVal"></span>% RH</strong></h5>
                                                                 </div>
                                                                 <div class="bat">
                                                                    <p class="mb-0"><i class="fas fa-car-battery"></i> <strong>Battery</strong></p>
@@ -337,23 +337,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- card1 start -->
-                                            <div>
-                                                <table>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Id</th>
-                                                            <th>Ota</th>
-                                                            <th>Temperature</th>
-                                                            <th>Humidity</th>
-                                                            <th>Timestamp</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody id="result">
-                                                        
-                                                    </tbody>
-                                                </table>
-                                            </div>
                                                 
                                             </div>
                                         </div>
@@ -400,27 +383,6 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-<script type="text/javascript">
-    let mydata = 'http://ansara.in/BJB/IOT/THM/api/thm2.json';
-
-        fetch(mydata)
-        .then(response => response.json())
-        .then(data2 =>{
-            console.log(mydata.length);
-
-            var temp = "";
-            for(var i=0; i<mydata.length; i++){
-                temp += "<tr align='center'>";
-                temp += "<td>" + mydata[i].id + "</td>";
-                temp += "<td>" + mydata[i].ota + "</td>";
-                temp += "<td>" + mydata[i].temperature + "</td>";
-                temp += "<td>" + mydata[i].humidity + "</td>";
-                temp += "<td>" + mydata[i].timestamp + "</td>";
-                temp += "</tr>";
-            }
-            document.getElementById("result").innerHTML = temp;
-        })
-</script>
 <script>
 var $window = $(window);
 var nav = $('.fixed-button');
@@ -434,6 +396,21 @@ var nav = $('.fixed-button');
  });
 </script>
 <script type="text/javascript">
+    $(document).ready(function(){
+        $.getJSON("http://ansara.in/BJB/IOT/THM/api/thm2.json", function(data){
+            console.log(data.id); // Prints: Harry
+            console.log(data.ota); // Prints: 14
+            var id = data.id;
+            var ota = data.ota;
+            var tem = data.temperature;
+            var hum = data.humidity;
+            var time = data.timestamp;    
+
+                //INSERTING ROWS INTO TABLE 
+                $('#temVal').append(tem);
+                $('#humVal').append(hum);
+
+       
     //temperature
     var gauge1 = new RadialGauge({
     renderTo: 'canvas-id',
@@ -441,7 +418,7 @@ var nav = $('.fixed-button');
     height: 230,
     units: "°C",
     title: "Temperature",
-    value: 20,
+    value: tem,
     minValue: -50,
     maxValue: 50,
     majorTicks: [
@@ -522,6 +499,11 @@ var nav = $('.fixed-button');
     colorValueText: "#fff",
     colorValueTextShadow: "#fff"
 }).draw();
+
+     }).fail(function(){
+            console.log("An error has occurred.");
+        });
+    });
 // setInterval(function() {
 //   // update the above chart...
 //   var value = Math.round(Math.random() * 50);

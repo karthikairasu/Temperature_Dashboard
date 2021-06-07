@@ -20,7 +20,7 @@
       <meta name="theme-color" content="#0B5E97">
       <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="194x194">
       <!-- Google font-->
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900;1,500;1,600&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:wght@100;200;300;400;500;600;700;800;900;1,500;1,600&display=swap" rel="stylesheet">
       <!-- Required Fremwork -->
       <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/css/bootstrap.min.css">
       <link href="assets/css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -338,7 +338,22 @@
                                                 </div>
                                             </div>
                                             <!-- card1 start -->
-                                            
+                                            <div>
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Id</th>
+                                                            <th>Ota</th>
+                                                            <th>Temperature</th>
+                                                            <th>Humidity</th>
+                                                            <th>Timestamp</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="result">
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                                 
                                             </div>
                                         </div>
@@ -385,7 +400,27 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script type="text/javascript">
+    let mydata = 'http://ansara.in/BJB/IOT/THM/api/thm2.json';
 
+        fetch(mydata)
+        .then(response => response.json())
+        .then(data2 =>{
+            console.log(mydata.length);
+
+            var temp = "";
+            for(var i=0; i<mydata.length; i++){
+                temp += "<tr align='center'>";
+                temp += "<td>" + mydata[i].id + "</td>";
+                temp += "<td>" + mydata[i].ota + "</td>";
+                temp += "<td>" + mydata[i].temperature + "</td>";
+                temp += "<td>" + mydata[i].humidity + "</td>";
+                temp += "<td>" + mydata[i].timestamp + "</td>";
+                temp += "</tr>";
+            }
+            document.getElementById("result").innerHTML = temp;
+        })
+</script>
 <script>
 var $window = $(window);
 var nav = $('.fixed-button');
@@ -487,14 +522,14 @@ var nav = $('.fixed-button');
     colorValueText: "#fff",
     colorValueTextShadow: "#fff"
 }).draw();
-setInterval(function() {
-  // update the above chart...
-  var value = Math.round(Math.random() * 50);
-  gauge1.value = value;
+// setInterval(function() {
+//   // update the above chart...
+//   var value = Math.round(Math.random() * 50);
+//   gauge1.value = value;
   
-  // Update the declarative chart...
-  document.getElementById("gauge-a").setAttribute("data-value", value);
-}, 1800);
+//   // Update the declarative chart...
+//   document.getElementById("gauge-a").setAttribute("data-value", value);
+// }, 1800);
 </script>
 <script type="text/javascript">
     //temperature
@@ -585,14 +620,14 @@ setInterval(function() {
     colorValueText: "#fff",
     colorValueTextShadow: "#fff"
 }).draw();
-setInterval(function() {
-  // update the above chart...
-  var value = Math.round(Math.random() * 50);
-  gauge2.value = value;
+// setInterval(function() {
+//   // update the above chart...
+//   var value = Math.round(Math.random() * 50);
+//   gauge2.value = value;
   
-  // Update the declarative chart...
-  document.getElementById("gauge-a").setAttribute("data-value", value);
-}, 1800);
+//   // Update the declarative chart...
+//   document.getElementById("gauge-a").setAttribute("data-value", value);
+// }, 1800);
 </script>
 <script type="text/javascript">
     //temperature
@@ -683,14 +718,14 @@ setInterval(function() {
     colorValueText: "#fff",
     colorValueTextShadow: "#fff"
 }).draw();
-setInterval(function() {
-  // update the above chart...
-  var value = Math.round(Math.random() * 50);
-  gauge3.value = value;
+// setInterval(function() {
+//   // update the above chart...
+//   var value = Math.round(Math.random() * 50);
+//   gauge3.value = value;
   
-  // Update the declarative chart...
-  document.getElementById("gauge-a").setAttribute("data-value", value);
-}, 1800);   
+//   // Update the declarative chart...
+//   document.getElementById("gauge-a").setAttribute("data-value", value);
+// }, 1800);   
 </script>
 <script type="text/javascript">
     Highcharts.chart('container', {

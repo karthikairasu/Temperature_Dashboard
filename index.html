@@ -396,7 +396,21 @@ var nav = $('.fixed-button');
 <script type="text/javascript">
 //===========gauge1=======================
     $(document).ready(function(){
-        
+        setInterval(function(){
+        $.getJSON("http://ansara.in/BJB/IOT/THM/api/thm1.json", function(data){
+            // console.log(data.id); // Prints: Harry
+            // console.log(data.ota); // Prints: 14
+            var id = data.id;
+            var ota = data.ota;
+            var tem = data.temperature;
+            var hum = data.humidity;
+            var time = data.timestamp;    
+              
+            //INSERTING div
+            $('#temVal').text(tem);
+            $('#humVal').text(hum);
+            $('#timeVal').text(time);
+              
        
             //temperature
             var gauge1 = new RadialGauge({
@@ -487,7 +501,16 @@ var nav = $('.fixed-button');
                 colorValueTextShadow: "#fff"
             }).draw();
 
-       
+        }).fail(function(){
+            console.log("An error has occurred.");
+        });
+
+        setInterval(function(){
+            var dt =new Date();
+            $("#autodiv").text("Time is :"+ dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds());
+        },1000);
+
+        },2000);
     });
 // setInterval(function() {
 //   // update the above chart...

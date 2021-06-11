@@ -234,7 +234,273 @@ var nav = $('.fixed-button');
      }
  });
 </script>
-
+<script type="text/javascript">
+    //temperature
+    var gauge = new RadialGauge({
+    renderTo: 'canvas-id',
+    width: 230,
+    height: 230,
+    units: "°C",
+    title: "Temperature",
+    value: 20,
+    minValue: -50,
+    maxValue: 50,
+    majorTicks: [
+        -50,
+        -40,
+        -30,
+        -20,
+        -10,
+        0,
+        10,
+        20,
+        30,
+        40,
+        50
+    ],
+    minorTicks: 2,
+    strokeTicks: true,
+    highlights: [
+        {
+            "from": -50, 
+            "to": -20, 
+            "color": "rgb(31 114 214)"
+        }, 
+        {
+            "from": -20, 
+            "to": -10, 
+            "color": "rgb(161 201 249)"
+        }, 
+        {
+            "from": -10, 
+            "to": 30, 
+            "color": "rgb(99 196 3)"
+        },
+        {
+            "from": 30, 
+            "to": 40, 
+            "color": "rgb(245 232 119)"
+        }, 
+        {
+            "from": 40, 
+            "to": 50, 
+            "color": "rgb(247 31 15)"
+        }
+    ],
+    ticksAngle: 225,
+    startAngle: 67.5,
+    colorMajorTicks: "#ddd",
+    colorMinorTicks: "#000",
+    colorTitle: "#000",
+    colorUnits: "#000",
+    colorNumbers: "#000",
+    colorPlate: "#fff",
+    borderShadowWidth: 0,
+    borders: true,
+    needleType: "arrow",
+    needleWidth: 2,
+    needleCircleSize: 7,
+    needleCircleOuter: true,
+    needleCircleInner: false,
+    animationDuration: 1500,
+    animationRule: "linear",
+    colorBorderOuter: "#fff",
+    colorBorderOuterEnd: "#fff",
+    colorBorderMiddle: "#fff",
+    colorBorderMiddleEnd: "#fff",
+    colorBorderInner: "#fff",
+    colorBorderInnerEnd: "#fff",
+    colorNeedleShadowDown: "#333",
+    colorNeedleCircleOuter: "#333",
+    colorNeedleCircleOuterEnd: "#111",
+    colorNeedleCircleInner: "#111",
+    colorNeedleCircleInnerEnd: "#222",
+    valueBoxBorderRadius: 0,
+    colorValueBoxRect: "#222",
+    colorValueBoxRectEnd: "#333"
+}).draw();
+    document.gauges.forEach(function (gauge) {
+    console.log(gauge.type);
+});
+</script>
+<script type="text/javascript">
+    //temperature
+    var gauge = new RadialGauge({
+    renderTo: 'canvas-id2',
+    width: 230,
+    height: 230,
+    units: "°C",
+    title: "Temperature",
+    value: 30,
+    minValue: -50,
+    maxValue: 50,
+    majorTicks: [
+        -50,
+        -40,
+        -30,
+        -20,
+        -10,
+        0,
+        10,
+        20,
+        30,
+        40,
+        50
+    ],
+    minorTicks: 2,
+    strokeTicks: true,
+    highlights: [
+        {
+            "from": -50, 
+            "to": -20, 
+            "color": "rgb(31 114 214)"
+        }, 
+        {
+            "from": -20, 
+            "to": -10, 
+            "color": "rgb(161 201 249)"
+        }, 
+        {
+            "from": -10, 
+            "to": 30, 
+            "color": "rgb(99 196 3)"
+        },
+        {
+            "from": 30, 
+            "to": 40, 
+            "color": "rgb(245 232 119)"
+        }, 
+        {
+            "from": 40, 
+            "to": 50, 
+            "color": "rgb(247 31 15)"
+        }
+    ],
+    ticksAngle: 225,
+    startAngle: 67.5,
+    colorMajorTicks: "#ddd",
+    colorMinorTicks: "#000",
+    colorTitle: "#000",
+    colorUnits: "#000",
+    colorNumbers: "#000",
+    colorPlate: "#fff",
+    borderShadowWidth: 0,
+    borders: true,
+    needleType: "arrow",
+    needleWidth: 2,
+    needleCircleSize: 7,
+    needleCircleOuter: true,
+    needleCircleInner: false,
+    animationDuration: 1500,
+    animationRule: "linear",
+    colorBorderOuter: "#fff",
+    colorBorderOuterEnd: "#fff",
+    colorBorderMiddle: "#fff",
+    colorBorderMiddleEnd: "#fff",
+    colorBorderInner: "#fff",
+    colorBorderInnerEnd: "#fff",
+    colorNeedleShadowDown: "#333",
+    colorNeedleCircleOuter: "#333",
+    colorNeedleCircleOuterEnd: "#111",
+    colorNeedleCircleInner: "#111",
+    colorNeedleCircleInnerEnd: "#222",
+    valueBoxBorderRadius: 0,
+    colorValueBoxRect: "#222",
+    colorValueBoxRectEnd: "#333"
+}).draw();
+    document.gauges.forEach(function (gauge) {
+    console.log(gauge.type);
+});
+</script>
+<script type="text/javascript">
+    //temperature
+    var gauge = new RadialGauge({
+    renderTo: 'canvas-id3',
+    width: 230,
+    height: 230,
+    units: "°C",
+    title: "Temperature",
+    value: -20,
+    minValue: -50,
+    maxValue: 50,
+    majorTicks: [
+        -50,
+        -40,
+        -30,
+        -20,
+        -10,
+        0,
+        10,
+        20,
+        30,
+        40,
+        50
+    ],
+    minorTicks: 2,
+    strokeTicks: true,
+    highlights: [
+        {
+            "from": -50, 
+            "to": -20, 
+            "color": "rgb(31 114 214)"
+        }, 
+        {
+            "from": -20, 
+            "to": -10, 
+            "color": "rgb(161 201 249)"
+        }, 
+        {
+            "from": -10, 
+            "to": 30, 
+            "color": "rgb(99 196 3)"
+        },
+        {
+            "from": 30, 
+            "to": 40, 
+            "color": "rgb(245 232 119)"
+        }, 
+        {
+            "from": 40, 
+            "to": 50, 
+            "color": "rgb(247 31 15)"
+        }
+    ],
+    ticksAngle: 225,
+    startAngle: 67.5,
+    colorMajorTicks: "#ddd",
+    colorMinorTicks: "#000",
+    colorTitle: "#000",
+    colorUnits: "#000",
+    colorNumbers: "#000",
+    colorPlate: "#fff",
+    borderShadowWidth: 0,
+    borders: true,
+    needleType: "arrow",
+    needleWidth: 2,
+    needleCircleSize: 7,
+    needleCircleOuter: true,
+    needleCircleInner: false,
+    animationDuration: 1500,
+    animationRule: "linear",
+    colorBorderOuter: "#fff",
+    colorBorderOuterEnd: "#fff",
+    colorBorderMiddle: "#fff",
+    colorBorderMiddleEnd: "#fff",
+    colorBorderInner: "#fff",
+    colorBorderInnerEnd: "#fff",
+    colorNeedleShadowDown: "#333",
+    colorNeedleCircleOuter: "#333",
+    colorNeedleCircleOuterEnd: "#111",
+    colorNeedleCircleInner: "#111",
+    colorNeedleCircleInnerEnd: "#222",
+    valueBoxBorderRadius: 0,
+    colorValueBoxRect: "#222",
+    colorValueBoxRectEnd: "#333"
+}).draw();
+    document.gauges.forEach(function (gauge) {
+    console.log(gauge.type);
+});
+</script>
 </body>
 
 </html>

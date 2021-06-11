@@ -14328,7 +14328,7 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
    text-align: center;
     padding: 4px 0px;
     font-family: digital-7;
-    font-size: 25px;
+    font-size: 21px;
 }
 .bat i{
    color: #4fd54f;
@@ -14338,7 +14338,7 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
    text-align: center;
     padding: 4px 0px;
     font-family: digital-7;
-    font-size: 25px;
+    font-size: 21px;
 }
 .hum i{
    color: #2196f3;
@@ -14348,7 +14348,7 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
    text-align: center;
     padding: 4px 0px;
     font-family: digital-7;
-    font-size: 25px;
+    font-size: 21px;
 }
 .tem i{
    color: #FC6180;
@@ -14397,4 +14397,12 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
 }
 .highcharts-button-symbol:hover{
   background: white!important;
+}
+
+.canvasjs-chart-credit{
+  display: none;
+}
+#chart {
+  width: 100%;
+  margin: 10px auto;
 }

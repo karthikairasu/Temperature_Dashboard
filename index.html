@@ -34,6 +34,8 @@
       <!-- Style.css -->
       <link rel="stylesheet" type="text/css" href="assets/css/style.css">
       <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
+
+      <link href="assets/js/c3.css" rel="stylesheet">
   </head>
 
   <body>
@@ -205,7 +207,7 @@
                                                             <div class="col-md-9 px-1 justify-content-center d-flex">
                                                                 <canvas id="canvas-id"></canvas>
                                                             </div>
-                                                            <div class="col-md-3 text-center px-1 pt-3">
+                                                            <div class="col-md-3 text-center px-1 pt-2">
                                                                 <div class="tem">
                                                                     <p class="mb-0"><i class="fas fa-thermometer-half"></i> <strong>TEMP</strong></p>
                                                                     <h5><strong><span id="temVal"></span>°C</strong></h5>
@@ -300,7 +302,8 @@
                                                     <div class="card-body p-0">
                                                         <div class="row">
                                                             <div class="col-md-12 justify-content-center d-flex">
-                                                                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                                                                <div id="chart"></div>
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -316,7 +319,7 @@
                                                     <div class="card-body p-0">
                                                         <div class="row">
                                                             <div class="col-md-12 justify-content-center d-flex">
-                                                                <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+                                                                <div id="chart2"></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -332,7 +335,7 @@
                                                     <div class="card-body p-0">
                                                         <div class="row">
                                                             <div class="col-md-12 justify-content-center d-flex">
-                                                                <div id="chartContainer3" style="height: 300px; width: 100%;"></div>
+                                                                <div id="chart3"></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -377,9 +380,11 @@
 <script src="assets/js/demo-12.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 
-<script src="https://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.7/all/gauge.min.js"></script>
+<script src="assets/js/gauge.min.js"></script>
 
 <script src="assets/js/canvasjs.min.js"></script>
+<script src="assets/js/d3.v5.min.js" charset="utf-8"></script>
+<script src="assets/js/c3.min.js"></script>
 <script>
 var $window = $(window);
 var nav = $('.fixed-button');
@@ -392,12 +397,12 @@ var nav = $('.fixed-button');
      }
  });
 </script>
-
+</script>
 <script type="text/javascript">
 //===========gauge1=======================
     $(document).ready(function(){
         setInterval(function(){
-        $.getJSON("http://ansara.in/BJB/IOT/THM/api/thm1.json", function(data){
+        $.getJSON("http://ansara.in/BJB/IOT/THM/api/thm4.json", function(data){
             // console.log(data.id); // Prints: Harry
             // console.log(data.ota); // Prints: 14
             var id = data.id;
@@ -769,249 +774,163 @@ var nav = $('.fixed-button');
 // }, 1800);  
 </script>
 <script type="text/javascript">
+$(document).ready(function(){
+    setInterval(function(){
+    $.getJSON("https://ansara.in/ABSWTHM/PHP/datatable.php?id=2", function(data){
+          
+        console.log(data); 
 
-window.onload = function () {
-    var chart = new CanvasJS.Chart("chartContainer", {
-    title:{
-        text: "Live Data"
-    },
-    axisY:[{
-        title: "Temperature",
-        lineColor: "#C24642",
-        tickColor: "#C24642",
-        labelFontColor: "#C24642",
-        titleFontColor: "#C24642",
-        includeZero: true,
-        suffix: "°C"
-    }],
-    axisY2: {
-        title: "Humidity",
-        lineColor: "#7F6084",
-        tickColor: "#7F6084",
-        labelFontColor: "#7F6084",
-        titleFontColor: "#7F6084",
-        includeZero: true,
-        prefix: "",
-        suffix: "RH"
-    },
-    toolTip: {
-        shared: true
-    },
-    legend: {
-        cursor: "pointer",
-        itemclick: toggleDataSeries
-    },
-    data: [
-    {
-        type: "line",
-        name: "Temperature",
-        color: "#1F72D6",
-        axisYIndex: 0,
-        showInLegend: true,
-        dataPoints: [
-            { x: 10, y: 32.3 }, 
-            { x: 20, y: 33.9 },
-            { x: 25, y: 26.0 },
-            { x: 30, y: 15.8 },
-            { x: 35, y: 18.6 },
-            { x: 40, y: 34.6 },
-            { x: 45, y: 37.7 },
-            { x: 50, y: 24.7 },
-            { x: 55, y: 35.9 },
-            { x: 60, y: 12.8 },
-            { x: 65, y: 38.1 },
-            { x: 70, y: 42.4 }
-        ]
-    },
-    {
-        type: "line",
-        name: "Humidity",
-        color: "#63C403",
-        axisYType: "secondary",
-        showInLegend: true,
-        dataPoints: [
-            { x: 10, y: 42.5 }, 
-            { x: 15, y: 44.3 },
-            { x: 20, y: 28.7 },
-            { x: 25, y: 22.5 },
-            { x: 30, y: 25.6 },
-            { x: 35, y: 45.7 },
-            { x: 40, y: 54.6 },
-            { x: 45, y: 32.0 },
-            { x: 50, y: 43.9 },
-            { x: 55, y: 26.4 },
-            { x: 60, y: 40.3 },
-            { x: 65, y: 54.2 }
-        ]
-    }]
-});
-chart.render();
+            // var temp = "['Temperature'";
+            // for(var i=0; i<10; i++){
+            //     temp +=  ", " + data[i].temperature ;
+            // }
+            // temp += "]";
+            // console.log("======================="); 
+            // console.log(temp); 
 
 
 
-function toggleDataSeries(e) {
-    if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-        e.dataSeries.visible = false;
-    } else {
-        e.dataSeries.visible = true;
-    }
-    e.chart.render();
-}
+            // var humid = "['Humidity'";
+            // for(var i=0; i<10; i++){
+            //     humid +=  ", " + data[i].humidity ;
+            // }
+            // humid += "]";
+            // console.log(humid); 
 
-    var chart = new CanvasJS.Chart("chartContainer2", {
-    title:{
-        text: "Live Data"
-    },
-    axisY:[{
-        title: "Temperature",
-        lineColor: "#C24642",
-        tickColor: "#C24642",
-        labelFontColor: "#C24642",
-        titleFontColor: "#C24642",
-        includeZero: true,
-        suffix: "°C"
-    }],
-    axisY2: {
-        title: "Humidity",
-        lineColor: "#7F6084",
-        tickColor: "#7F6084",
-        labelFontColor: "#7F6084",
-        titleFontColor: "#7F6084",
-        includeZero: true,
-        prefix: "",
-        suffix: "RH"
-    },
-    toolTip: {
-        shared: true
-    },
-    legend: {
-        cursor: "pointer",
-        itemclick: toggleDataSeries
-    },
-    data: [
-    {
-        type: "line",
-        name: "Temperature",
-        color: "#1F72D6",
-        axisYIndex: 0,
-        showInLegend: true,
-        dataPoints: [
-            { x: 10, y: 32.3 }, 
-            { x: 20, y: 33.9 },
-            { x: 25, y: 26.0 },
-            { x: 30, y: 15.8 },
-            { x: 35, y: 18.6 },
-            { x: 40, y: 34.6 },
-            { x: 45, y: 37.7 },
-            { x: 50, y: 24.7 },
-            { x: 55, y: 35.9 },
-            { x: 60, y: 12.8 },
-            { x: 65, y: 38.1 },
-            { x: 70, y: 42.4 }
-        ]
-    },
-    {
-        type: "line",
-        name: "Humidity",
-        color: "#63C403",
-        axisYType: "secondary",
-        showInLegend: true,
-        dataPoints: [
-            { x: 10, y: 42.5 }, 
-            { x: 15, y: 44.3 },
-            { x: 20, y: 28.7 },
-            { x: 25, y: 22.5 },
-            { x: 30, y: 25.6 },
-            { x: 35, y: 45.7 },
-            { x: 40, y: 54.6 },
-            { x: 45, y: 32.0 },
-            { x: 50, y: 43.9 },
-            { x: 55, y: 26.4 },
-            { x: 60, y: 40.3 },
-            { x: 65, y: 54.2 }
-        ]
-    }]
-});
-chart.render();
+             var chart = c3.generate({
+                bindto: '#chart',
+                data: {
+                    x: 'x',
+                    columns: [
+                        ['x', 5, 10, 15, 20, 25, 30, 35, 40, 45, 90],
+                        ['Temperature', 30, 20, 34, 37, 38, 43, 36, 41, 35, 45], // temp,
+                        ['Humidity', 50, 20, 10, 40, 15, 25, 34, 45, 32, 54] //humid
+                    ],
+                    colors: {
+                        Temperature: '#F71F0F',
+                        Humidity: '#2198F4'
+                    },
+                    axes: {
+                        Temperature: 'y',
+                        Humidity: 'y2'
+                    }
+                },
+                axis: {
+                     x: {
+                         label: {
+                            text: 'Time',
+                            position: 'outer-center'
+                         }
+                        },
+                     y: {
+                        label: { // ADD
+                          text: 'Temperature',
+                          position: 'outer-middle'
+                        }
+                      },
+                      y2: {
+                        show: true,
+                        label: { // ADD
+                          text: 'Humidity',
+                          position: 'outer-middle'
+                        }
+                      }
+                }
+            });
 
-    var chart = new CanvasJS.Chart("chartContainer3", {
-    title:{
-        text: "Live Data"
-    },
-    axisY:[{
-        title: "Temperature",
-        lineColor: "#C24642",
-        tickColor: "#C24642",
-        labelFontColor: "#C24642",
-        titleFontColor: "#C24642",
-        includeZero: true,
-        suffix: "°C"
-    }],
-    axisY2: {
-        title: "Humidity",
-        lineColor: "#7F6084",
-        tickColor: "#7F6084",
-        labelFontColor: "#7F6084",
-        titleFontColor: "#7F6084",
-        includeZero: true,
-        prefix: "",
-        suffix: "RH"
-    },
-    toolTip: {
-        shared: true
-    },
-    legend: {
-        cursor: "pointer",
-        itemclick: toggleDataSeries
-    },
-    data: [
-    {
-        type: "line",
-        name: "Temperature",
-        color: "#1F72D6",
-        axisYIndex: 0,
-        showInLegend: true,
-        dataPoints: [
-            { x: 10, y: 32.3 }, 
-            { x: 20, y: 33.9 },
-            { x: 25, y: 26.0 },
-            { x: 30, y: 15.8 },
-            { x: 35, y: 18.6 },
-            { x: 40, y: 34.6 },
-            { x: 45, y: 37.7 },
-            { x: 50, y: 24.7 },
-            { x: 55, y: 35.9 },
-            { x: 60, y: 12.8 },
-            { x: 65, y: 38.1 },
-            { x: 70, y: 42.4 }
-        ]
-    },
-    {
-        type: "line",
-        name: "Humidity",
-        color: "#63C403",
-        axisYType: "secondary",
-        showInLegend: true,
-        dataPoints: [
-            { x: 10, y: 42.5 }, 
-            { x: 15, y: 44.3 },
-            { x: 20, y: 28.7 },
-            { x: 25, y: 22.5 },
-            { x: 30, y: 25.6 },
-            { x: 35, y: 45.7 },
-            { x: 40, y: 54.6 },
-            { x: 45, y: 32.0 },
-            { x: 50, y: 43.9 },
-            { x: 55, y: 26.4 },
-            { x: 60, y: 40.3 },
-            { x: 65, y: 54.2 }
-        ]
-    }]
-});
-chart.render();
-}
+        }).fail(function(){
+            console.log("An error has occurred.");
+        });
+
+        },10000);
+    });
 
 </script>
+<script type="text/javascript">
+    var chart = c3.generate({
+    bindto: '#chart2',
+    data: {
+        x: 'x',
+        columns: [
+            ['x', 10, 20, 30, 40, 50, 60, 70, 80, 85, 90],
+            ['Temperature', 30, 20, 10, 40, 15, 25, 20, 23, 10, 34],
+            ['Humidity', 50, 20, 10, 40, 15, 25]
+        ],
+        colors: {
+            Temperature: '#F71F0F',
+            Humidity: '#2198F4'
+        },
+        axes: {
+            Temperature: 'y',
+            Humidity: 'y2'
+        }
+    },
+    axis: {
+         x: {
+             label: {
+                text: 'Time',
+                position: 'outer-center'
+             }
+            },
+         y: {
+            label: { // ADD
+              text: 'Temperature',
+              position: 'outer-middle'
+            }
+          },
+          y2: {
+            show: true,
+            label: { // ADD
+              text: 'Humidity',
+              position: 'outer-middle'
+            }
+          }
+    }
+});
+
+var chart = c3.generate({
+    bindto: '#chart3',
+    data: {
+        x: 'x',
+        columns: [
+            ['x', 10, 20, 30, 40, 50, 60],
+            ['Temperature', 30, 20, 10, 40, 15, 25],
+            ['Humidity', 50, 20, 10, 40, 15, 25]
+        ],
+        colors: {
+            Temperature: '#F71F0F',
+            Humidity: '#2198F4'
+        },
+        axes: {
+            Temperature: 'y',
+            Humidity: 'y2'
+        }
+    },
+    axis: {
+         x: {
+             label: {
+                text: 'Time',
+                position: 'outer-center'
+             }
+            },
+         y: {
+            label: { // ADD
+              text: 'Temperature',
+              position: 'outer-middle'
+            }
+          },
+          y2: {
+            show: true,
+            label: { // ADD
+              text: 'Humidity',
+              position: 'outer-middle'
+            }
+          }
+    }
+});
+</script>
+
+
 </body>
 
 </html>

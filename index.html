@@ -335,7 +335,7 @@
                                                     <div class="card-body p-0">
                                                         <div class="row">
                                                             <div class="col-md-12 justify-content-center d-flex">
-                                                                <div id="chart3"></div>
+                                                                <div id="chart4"></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -385,6 +385,8 @@
 <script src="assets/js/canvasjs.min.js"></script>
 <script src="assets/js/d3.v5.min.js" charset="utf-8"></script>
 <script src="assets/js/c3.min.js"></script>
+
+<script src="assets/js/apexcharts.min.js"></script>
 <script>
 var $window = $(window);
 var nav = $('.fixed-button');
@@ -928,6 +930,108 @@ var chart = c3.generate({
           }
     }
 });
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+        var options = {
+          chart: {
+            height: 350,
+            type: "line",
+            stacked: false
+          },
+          dataLabels: {
+            enabled: false
+          },
+          colors: ["#FF1654", "#247BA0"],
+          series: [
+            {
+              name: "Temperature",
+              data: ["41°C", "36°C", "39°C", "32°C", "42°C", "37°C", "45°C"]
+            },
+            {
+              name: "Humidity",
+              data: ["65%", "54%", "45%", "67%", "54%", "62%", "63%", "59%"]
+            }
+          ],
+          stroke: {
+            width: [4, 4]
+          },
+          plotOptions: {
+            bar: {
+              columnWidth: "20%"
+            }
+          },
+          xaxis: {
+            categories: ["10mins", "20mins", "30mins", "40mins", "50mins", "60mins", "70mins", "80mins"]
+          },
+          markers: {
+            size: 4,
+          },
+          fill: {
+          type: 'gradient'
+        },
+          yaxis: [
+            {
+              axisTicks: {
+                show: true
+              },
+              axisBorder: {
+                show: true,
+                color: "#FF1654"
+              },
+              labels: {
+                style: {
+                  colors: "#FF1654"
+                }
+              },
+              title: {
+                text: "Temperature",
+                style: {
+                  color: "#FF1654"
+                }
+              }
+            },
+            {
+              opposite: true,
+              axisTicks: {
+                show: true
+              },
+              axisBorder: {
+                show: true,
+                color: "#247BA0"
+              },
+              labels: {
+                style: {
+                  colors: "#247BA0"
+                }
+              },
+              title: {
+                text: "Humidity",
+                style: {
+                  color: "#247BA0"
+                }
+              }
+            }
+          ],
+          tooltip: {
+            shared: false,
+            intersect: true,
+            x: {
+              show: false
+            }
+          },
+          legend: {
+            horizontalAlign: "left",
+            offsetX: 40
+          }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart4"), options);
+
+        chart.render();
+
+});
+    
 </script>
 
 

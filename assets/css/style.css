@@ -14417,6 +14417,14 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
   max-height: 260px!important;
   margin: 10px auto;
 }
+#chart4 {
+  width: 100%;
+  max-height: 260px!important;
+  margin: 10px auto;
+}
 .c3-line {
     stroke-width: 2px!important;
+}
+.apexcharts-toolbar {
+  display: none!important;
 }
